@@ -1,6 +1,10 @@
-pi@printserver  # ...159
+[bramble]
+pi@rpi0  # ...159
 pi@rpi1			# ...170
 pi@rpi2			# ...148
 pi@rpi3 		# ...190
 pi@rpi4 		# ...116
 pi@rpi5 		# ...125
+
+[snapraise]
+george@76.121.65.117	#snapraise samba host

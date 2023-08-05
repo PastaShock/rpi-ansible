@@ -1,0 +1,6 @@
+---
+- name: Shutdown specified hosts
+  become: yes
+  tasks:
+     - name: shutdown
+       ansible.builtin.shell: shutdown now
