@@ -25,3 +25,7 @@ I want to run a small network share.
 I want to run a print server.
 
 I want to run PiHole.
+
+### Additional Notes:
+
+[Fri Dec 1 2023] I have forgotten what I was doing and I am going to restart the Jeff geerling Tut. Perhaps on 2x speed until I start remembering where I left off.
