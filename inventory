@@ -1,14 +1,14 @@
-<<<<<<< HEAD
 [bramble]
-pi@rpi0  # ...159
-=======
-pi@rpi0         # ...159
->>>>>>> f2b25f46aec33292c8c608ae6c611f39e97e7213
+pi@rpi0     # ...159
 pi@rpi1			# ...170
 pi@rpi2			# ...148
 pi@rpi3 		# ...190
 pi@rpi4 		# ...116
 pi@rpi5 		# ...125
+
+# Proxmox VMs
+[proxmox]
+george@plexlxc
 
 [snapraise]
 george@76.121.65.117	#snapraise samba host

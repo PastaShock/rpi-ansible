@@ -1,9 +1,14 @@
 ---
 - name: Set up NTP on all servers.
-  hosts: all
+  hosts: bramble
   become: yes
   tasks:
-     - name: Ensure NTP is installed.
-       package: name=ntp state=present
-     - name: Ensure NTP is running.
-       service: name=ntp state=started enabled=yes
+  - name: Ensure NTP is installed.
+    package: name=ntp state=present
+  - name: Ensure NTP is running.
+    service: name=ntp state=started enabled=yes
+  - name: Install nvm
+    shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
