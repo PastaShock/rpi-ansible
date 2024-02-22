@@ -1,0 +1,12 @@
+---
+- name: List all the sources in /etc/apt/sources.list
+  hosts: bramble
+  become: false
+  tasks:
+  - name: run shell command
+    shell: cat /etc/apt/sources.list
+    register: com_out
+
+  - name: print to console
+    debug:
+      msg: "{{com_out.stdout}}"

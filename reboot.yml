@@ -1,0 +1,8 @@
+---
+- name: Reboot specified host groups
+  hosts: bramble
+  become: yes
+
+  tasks:
+  - name: reboot
+    command: reboot
