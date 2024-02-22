@@ -29,3 +29,5 @@ I want to run PiHole.
 ### Additional Notes:
 
 [Fri Dec 1 2023] I have forgotten what I was doing and I am going to restart the Jeff geerling Tut. Perhaps on 2x speed until I start remembering where I left off.
+[feb 21 2024]
+I've restarted the Jeff Geerling tutorial series and I am looking into use cases (postgresql/mariadb servers)

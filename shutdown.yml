@@ -1,6 +1,8 @@
 ---
 - name: Shutdown specified hosts
+  hosts: bramble
   become: yes
+
   tasks:
-     - name: shutdown
-       ansible.builtin.shell: shutdown now
+  - name: shutdown
+    command: shutdown now

@@ -1,0 +1,21 @@
+---
+- name: Install mariadb-server on host.
+  hosts: database
+  become: yes
+  tasks:
+  - name: gather facts
+    ansible.builtin.package_facts:
+      manager: auto
+
+  - name: check if package is installed (via ansible package)
+    package:
+      name: mariadb-server
+      state: present
+    check_mode: true
+    register: pack_check
+
+  - name: Ensure mariadb-server is installed
+    package: name=mariadb-server state=present
+
+  - name: Ensure mariadb-server is running
+    service: name=mariadb-server state=started enabled=yes

@@ -1,10 +1,26 @@
 [bramble]
+<<<<<<< Updated upstream
 pi@rpi0     # ...159
 pi@rpi1			# ...170
 pi@rpi2			# ...148
 pi@rpi3 		# ...190
 pi@rpi4 		# ...116
 pi@rpi5 		# ...125
+=======
+pi@rpi0         # ...150
+pi@rpi1			# ...152
+pi@rpi2			# ...154
+pi@rpi3 		# ...156
+pi@rpi4 		# ...158
+pi@rpi5 		# ...160
+
+[proxmox]
+root@pve.localdomain   # proxmox host
+:children
+george@ubuntu-server   # ubuntu vm
+george@win11           # windows 11
+george@arch            # arch
+>>>>>>> Stashed changes
 
 # Proxmox VMs
 [proxmox]
@@ -12,3 +28,11 @@ george@plexlxc
 
 [snapraise]
 george@76.121.65.117	#snapraise samba host
+// add the sql host here
+
+// make categories of services
+[samba]
+
+[database]
+
+// etc...

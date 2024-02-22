@@ -1,0 +1,21 @@
+---
+- name: Install PostgreSQL on host.
+  hosts: database
+  become: yes
+  tasks:
+  - name: gather facts
+    ansible.builtin.package_facts:
+      manager: auto
+
+  - name: check if package is installed (via ansible package)
+    package:
+      name: postgresql
+      state: present
+    check_mode: true
+    register: pack_check
+
+  - name: Ensure postgresql is installed
+    package: name=postgresql state=present
+
+  - name: Ensure postgresql is running
+    service: name=postgresql state=started enabled=yes
