@@ -22,3 +22,13 @@ all:
       hosts:
         pi@rpi1:
         # george@76.121.65.117 # snap db host
+    linux:
+      hosts:
+        pi@rpi0:        # ...150
+        pi@rpi1:		# ...152
+        pi@rpi2:		# ...154
+        pi@rpi3:		# ...156
+        pi@rpi4: 		# ...158
+        pi@rpi5: 		# ...160
+        george@ubuntu-server:   # ubuntu vm
+        george@73.169.215.156:	#snap samba host

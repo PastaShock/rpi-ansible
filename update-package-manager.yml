@@ -1,0 +1,10 @@
+---
+- name: Package manager update and upgrade
+  hosts: linux
+  become: yes
+  tasks:
+  - name: update all apps
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+      update_cache: yes
