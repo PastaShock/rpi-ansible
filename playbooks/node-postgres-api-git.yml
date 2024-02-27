@@ -1,0 +1,16 @@
+---
+- name: Git clone and npm install
+  hosts: node-pg-api
+  become: no
+  tasks:
+  - name: Clone postgresql boilerplate repo
+    git:
+      repo: https://github.com/PastaShock/postgresql-node-boilerplate.git
+      dest: postgresql-node-boilerplate
+      clone: yes
+      update: false
+
+  - name: npm install
+    community.general.npm:
+      path: postgresql-node-boilerplate
+      state: latest

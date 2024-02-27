@@ -1,12 +1,4 @@
 [bramble]
-<<<<<<< Updated upstream
-pi@rpi0     # ...159
-pi@rpi1			# ...170
-pi@rpi2			# ...148
-pi@rpi3 		# ...190
-pi@rpi4 		# ...116
-pi@rpi5 		# ...125
-=======
 pi@rpi0         # ...150
 pi@rpi1			# ...152
 pi@rpi2			# ...154

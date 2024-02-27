@@ -1,0 +1,31 @@
+---
+- name: Set up Dev Environment (barebones)
+  hosts: linux
+  become: no
+  vars:
+    vimrepo: "{{ ansible_env.HOME }}/vimrc/vimrc"
+    vimrc: "{{ ansible_env.HOME }}/.vimrc"
+  tasks:
+  - name: 'install git'
+    package:
+      name: git
+      state: present
+    become: yes
+  - name: check if vim is installed
+    package:
+      name: vim
+      state: present
+    register: vim_check
+    become: yes
+  - name: clone vimrc repo
+    git:
+      repo: https://gist.github.com/c8f4ca32f6fea39eda9622734a24ea21.git
+      dest: vimrc
+      clone: yes
+      update: false
+  - name: set vimrc from repo
+    copy:
+      src: "{{ vimrepo }}"
+      dest: "{{ vimrc }}"
+      backup: yes
+      mode: 0640

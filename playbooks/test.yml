@@ -1,0 +1,8 @@
+---
+- name: test-playbook
+  hosts: node-pg-api
+  become: false
+  gather_facts: true
+  tasks:
+  - name: "source nvm.sh"
+    action: command source {{ ansible_env.HOME }}/.nvm/nvm.sh

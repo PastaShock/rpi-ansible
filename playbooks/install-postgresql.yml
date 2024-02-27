@@ -14,8 +14,10 @@
     check_mode: true
     register: pack_check
 
-  - name: Ensure postgresql is installed
-    package: name=postgresql state=present
+  - name: check if postgresql-contrib
+    package:
+      name: postgresql-contrib
+      state: present
 
   - name: Ensure postgresql is running
     service: name=postgresql state=started enabled=yes

@@ -20,8 +20,15 @@ all:
         george@76.121.65.117:	#snap samba host
     database:
       hosts:
-        pi@rpi1:
+        pi@rpi3:
+        pi@rpi4:
         # george@76.121.65.117 # snap db host
+    node-pg-api:
+      hosts:
+        pi@rpi2:
+    node-frontend:
+      hosts:
+        pi@rpi5:
     linux:
       hosts:
         pi@rpi0:        # ...150
