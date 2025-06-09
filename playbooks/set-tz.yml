@@ -1,0 +1,8 @@
+---
+- name: Set timezone
+  hosts: minecraft
+  tasks:
+  - name: Set timezone to America/Los_Angeles
+    become: true
+    community.general.timezone:
+      name: America/Los_Angeles

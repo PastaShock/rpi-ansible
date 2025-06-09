@@ -1,8 +1,9 @@
 ---
 - name: test-playbook
-  hosts: node-pg-api
+  hosts: node
   become: false
   gather_facts: true
+
   tasks:
-  - name: "source nvm.sh"
-    action: command source {{ ansible_env.HOME }}/.nvm/nvm.sh
+  - name: get NVM
+    shell: 'wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
