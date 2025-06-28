@@ -1,13 +1,16 @@
 ---
 - name: Package manager update and upgrade
-  hosts: bramble
+  hosts: linux
   become: yes
   tasks:
-  - name: update all apps
+  - name: update packages
     ansible.builtin.apt:
       name: "*"
       state: latest
       update_cache: yes
+  - name: upgrade all packages
+    ansible.builtin.apt:
+      upgrade: yes
   - name: update dist
     ansible.builtin.apt:
       upgrade: dist

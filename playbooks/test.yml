@@ -1,9 +1,9 @@
 ---
 - name: test-playbook
-  hosts: node
+  hosts: bramble
   become: false
   gather_facts: true
 
   tasks:
-  - name: get NVM
-    shell: 'wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
+  - name: add user ansible
+    shell: "pass=$( perl -e 'print crypt('ansible')'); useradd -m -s /bin/bash -p $pass ansible; usermod -aG sudo ansible;"

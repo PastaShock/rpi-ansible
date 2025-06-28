@@ -3,48 +3,57 @@ all:
   children:
     bramble:
       hosts:
-        pi@rpi0.localdomain:    # ...150
-        pi@rpi1.localdomain:		# ...152
-        pi@rpi2.localdomain:		# ...154
-        pi@rpi3.localdomain:		# ...156
-        pi@rpi4.localdomain: 		# ...158
-        pi@rpi5.localdomain: 		# ...160
-    proxmox:
+        pi@rpi0.localdomain:      # ...150
+        pi@rpi1.localdomain:		  # ...152
+        pi@rpi2.localdomain:		  # ...154
+        pi@rpi3.localdomain:		  # ...156
+        pi@rpi4.localdomain: 		  # ...158
+        pi@rpi5.localdomain: 		  # ...160
+    proxmox-home:
       hosts:
-        root@pve.local:   # proxmox host
-        george@ubuntu-server:   # ubuntu vm
-        root@minecraftlxc.local:      # ubuntu minecraft
+        # root@pve.local:           # proxmox host
+        ansible@ubuntu-server:     # ubuntu vm
+        ansible@minecraftlxc.local:  # ubuntu minecraft
+        ansible@webhost.local:     # Apache web dev server
+        ansible@nextjs-dashboard:  # Nodejs, Reactjs, Nextjs, TailwindCSS dev project
+    pihole:
+      hosts:
+        pi@rpi0.localdomain:      # ...150
+        ansible@pihole.local:
     orderdb:
       hosts:
-        george@orders-db.snap: # orderdb samba host
+        george@orders-db.snap:    # orderdb samba host
     database:
       hosts:
-        pi@rpi3.localdomain:  # orderdb dev host psql
-        george@orders-db.snap: # orderdb db host psql
+        pi@rpi3.localdomain:      # orderdb dev host psql
+        george@orders-db.snap:    # orderdb db host psql
     node-pg-api:
       hosts:
-        pi@rpi2.localdomain:  # orderdb api @parents
-        george@orders-api.snap: # orderdb api @snap-warehouse
+        pi@rpi2.localdomain:      # orderdb api @parents
+        george@orders-api.snap:   # orderdb api @snap-warehouse
     node-frontend:
       hosts:
-        pi@rpi4.localdomain:  # nginx hosted nodejs/react project
+        pi@rpi4.localdomain:      # nginx hosted nodejs/react project
     node:
       hosts:
-        pi@rpi4.localdomain:  # nginx hosted nodejs/react project
-        pi@rpi2.localdomain:  # orderdb api @parents
-        george@orders-api.snap: # orderdb api @snap-warehouse
+        pi@rpi4.localdomain:      # nginx hosted nodejs/react project
+        pi@rpi2.localdomain:      # orderdb api @parents
+        george@orders-api.snap:   # orderdb api @snap-warehouse
     minecraft:
       hosts:
-        root@minecraftlxc.local:      # ubuntu minecraft
-        pi@rpi1.localdomain:		# ...152
+        ansible@minecraftlxc.local:  # ubuntu minecraft
+        pi@rpi1.localdomain:	  	# ...152
     linux:
       hosts:
-        pi@rpi0.localdomain:        # ...150
-        pi@rpi1.localdomain:		# ...152
-        pi@rpi2.localdomain:		# ...154
-        pi@rpi3.localdomain:		# ...156
-        pi@rpi4.localdomain: 		# ...158
-        pi@rpi5.localdomain: 		# ...160
-        george@ubuntu-server:   # ubuntu vm
-        george@orders-db.snap:	# orderdb samba host
-        george@orders-api.snap:  # orderdb api
+        pi@rpi0.localdomain:      # ...150
+        pi@rpi1.localdomain:		  # ...152
+        pi@rpi2.localdomain:		  # ...154
+        pi@rpi3.localdomain:		  # ...156
+        pi@rpi4.localdomain: 		  # ...158
+        pi@rpi5.localdomain: 		  # ...160
+        ansible@ubuntu-lab.local:  # ubuntu vm
+        george@orders-db.snap:	  # orderdb samba host
+        george@orders-api.snap:   # orderdb api
+        ansible@minecraftlxc.local:  # ubuntu minecraft
+        ansible@webhost.local:     # Apache web dev server
+        ansible@nextjs-dashboard.local:  # Nodejs, Reactjs, Nextjs, TailwindCSS dev project
