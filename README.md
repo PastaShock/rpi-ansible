@@ -59,3 +59,7 @@ rpi8, mysql-prod
 I've restarted the Jeff Geerling tutorial series and I am looking into use cases (postgresql/mariadb servers)
 [Sun 8 Jun 2025]
 I've restarted the Jeff Geerling tutorial series.
+[Fri 27 Jun 2025]
+I've updated the inventory file. Ansible still doesn't see ansible.cfg as the config or it doesn't recognize my inventory file structure in the default way. I still have to specifically use -i inventory.yml to get any ansible-playbook command to run.
+I created a pihole group and added two machines to it. I created an update-pihole playbook to run as well.
+I went through and created users "ansible" on my local Proxmox VMs by: useradd -m -s /bin/bash ansible; usermod -aG sudo ansible; passwd ansible; visudo << ansible ALL=(ALL:ALL) ALL/ ; su ansible; ansible$ ssh-keygen -t ed25519 (all defaults);  echo "ssh-ed25519 SSH_PUB_KEY george@GeorgePC" >> .ssh/authorized_keys; This way I can run ansible without a logon password and without a sudo password.

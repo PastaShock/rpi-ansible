@@ -16,6 +16,8 @@ all:
         ansible@minecraftlxc.local:  # ubuntu minecraft
         ansible@webhost.local:     # Apache web dev server
         ansible@nextjs-dashboard:  # Nodejs, Reactjs, Nextjs, TailwindCSS dev project
+        ansible@rtmp.local:       # RTMP server
+        ansible@deluge.local:     # Deluge server, ElementaryOS
     pihole:
       hosts:
         pi@rpi0.localdomain:      # ...150
@@ -57,3 +59,5 @@ all:
         ansible@minecraftlxc.local:  # ubuntu minecraft
         ansible@webhost.local:     # Apache web dev server
         ansible@nextjs-dashboard.local:  # Nodejs, Reactjs, Nextjs, TailwindCSS dev project
+        ansible@rtmp.local:       # RTMP server
+        ansible@deluge.local:     # Deluge server, ElementaryOS
